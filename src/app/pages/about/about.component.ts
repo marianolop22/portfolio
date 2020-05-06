@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoPaginaService } from 'src/app/services/info-pagina.service';
+import { Team } from 'src/app/interfaces/team-pagina.interface';
 
 @Component({
   selector: 'app-about',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  team: Array<Team>;
+
+  constructor(
+    private _info: InfoPaginaService
+  ) { }
 
   ngOnInit(): void {
+
+    this._info.getTeam ().subscribe (
+      (response: Array<Team>) => {
+        this.team = response;
+      }
+    )
   }
 
 }
