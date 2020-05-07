@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/services/productos.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-portafolio',
@@ -8,11 +9,17 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class PortafolioComponent implements OnInit {
 
+  
+
+
+  
   constructor(
     public _productos: ProductosService
-  ) { }
+    
+  ) {}
 
   ngOnInit(): void {
+
 
 
   }
